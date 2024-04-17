@@ -1,13 +1,8 @@
-import { useState } from "react";
-import { initItems } from "../lib/constants";
-
-export default function Items() {
-  const [items, setiItems] = useState(initItems);
-
+export default function Items({ items }) {
   return (
     <ul>
-      {initItems.map((item) => {
-        return <Item key={item.name} item={item} />;
+      {items.map((item) => {
+        return <Item key={item.id} item={item} />;
       })}
     </ul>
   );
