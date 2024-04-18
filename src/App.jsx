@@ -3,11 +3,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import Items from "./components/Items";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { initItems } from "./lib/constants";
 
 function App() {
-  const [items, setItems] = useState(initItems);
+  const itemLocalStorage = JSON.parse(localStorage.getItem("items"));
+  const [items, setItems] = useState(itemLocalStorage || initItems);
 
   const handleAdd = (newItemText) => {
     const newItem = {
@@ -20,6 +21,21 @@ function App() {
     setItems(newItems);
   };
 
+  const handleDelete = (id) => {
+    const newItems = items.filter((item) => item.id !== id);
+    setItems(newItems);
+  };
+
+  const handleToggle = (id) => {
+    const newItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, packed: !item.packed };
+      }
+      return item;
+    });
+    setItems(newItems);
+  };
+
   const handleRemove = () => {
     setItems([]);
   };
@@ -28,16 +44,45 @@ function App() {
     setItems(initItems);
   };
 
+  const handleComplete = () => {
+    const newItems = items.map((item) => {
+      return { ...item, packed: true };
+    });
+
+    setItems(newItems);
+  };
+
+  const handleIncomplete = () => {
+    const newItems = items.map((item) => {
+      return { ...item, packed: false };
+    });
+
+    setItems(newItems);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
+
   return (
     <>
       <Background />
       <main>
-        <Header />
-        <Items items={items} />
+        <Header
+          packedItems={items.filter((item) => item.packed).length}
+          totalItems={items.length}
+        />
+        <Items
+          items={items}
+          handleDelete={handleDelete}
+          handleToggle={handleToggle}
+        />
         <SideBar
           handleAdd={handleAdd}
           handleRemove={handleRemove}
           handleReset={handleReset}
+          handleComplete={handleComplete}
+          handleIncomplete={handleIncomplete}
         />
       </main>
       <Footer />
