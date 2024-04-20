@@ -1,7 +1,7 @@
 export const initItems = [
   {
     id: 1,
-    name: "Açucar",
+    name: "Sugar",
     packed: false,
   },
 ];
