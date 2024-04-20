@@ -1,3 +1,3 @@
 export default function Background() {
-  return <h1>Trekbag</h1>;
+  return <h1>MARKET</h1>;
 }
