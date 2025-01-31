@@ -5,7 +5,7 @@ and mark them as you pick them up at the store, it's a simple but very useful pr
 
 See the program here -> https://my-grocerylist.vercel.app/
 
-### FEATURES
+### Features
 
 🍪 <b>Cookies:</b> I used React functions for data storage to enhance the user experience;<br>
 🔎 <b>Filtering:</b> I used hooks, such as useMemo for the operation of the filters;<br>
