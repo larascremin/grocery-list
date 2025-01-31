@@ -1,6 +1,6 @@
 ### 🛒 GROCERY LIST
 
-This program is an online grocery list! In it, you can write down all your items, count them, <br>
+This program is an online grocery list. In it, you can write down all your items, count them, <br>
 and mark them as you pick them up at the store, it's a simple but very useful program.
 
 See the program here -> https://my-grocerylist.vercel.app/
@@ -16,8 +16,7 @@ See the program here -> https://my-grocerylist.vercel.app/
 ##
 
 <div> 
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
-  
+  <img src="https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000">
+  <img src="https://img.shields.io/badge/Vercel-%23000000.svg?logo=vercel&logoColor=white">
 </div>
